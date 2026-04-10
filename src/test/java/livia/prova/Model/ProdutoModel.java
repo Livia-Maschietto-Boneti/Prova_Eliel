@@ -1,5 +1,8 @@
 package livia.prova.Model;
 
+
+//o coiso do postman não deu certo, esqueci como faz veyyy :(
+
 import com.cm.crud.enums.StatusProduto;
 import jakarta.persistence.*;
 
