@@ -1,7 +1,7 @@
 package livia.prova.Controllers;
 
-import com.cm.crud.models.ProdutoModel;
-import com.cm.crud.services.ProdutoService;
+import livia.prova.Model.ProdutoModel;
+import livia.prova.Service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +32,7 @@ public class ProdutoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ProdutoModel> buscar(@PathVariable Long id){
-        ProdutoModel produto = service.buscar(id);
+        ProdutoModel produto = service.buscarPorId(id);
 
         if(produto == null){
             return ResponseEntity.notFound().build();
@@ -43,7 +43,7 @@ public class ProdutoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ProdutoModel> atualizar(@PathVariable Long id, @RequestBody ProdutoModel produto){
-        ProdutoModel existente = service.buscar(id);
+        ProdutoModel existente = service.buscarPorId(id);
 
         if(existente == null){
             return ResponseEntity.notFound().build();

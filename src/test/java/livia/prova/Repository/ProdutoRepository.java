@@ -1,6 +1,6 @@
 package livia.prova.Repository;
 
-import com.cm.livia.ProdutoModel;
+import livia.prova.Model.ProdutoModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

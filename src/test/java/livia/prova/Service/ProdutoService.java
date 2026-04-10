@@ -1,7 +1,7 @@
 package livia.prova.Service;
 
-import com.cm.crud.models.ProdutoModel;
-import com.cm.crud.repositories.ProdutoRepository;
+import livia.prova.Model.ProdutoModel;
+import livia.prova.Repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +21,8 @@ public class ProdutoService {
         return repository.findAll();
     }
 
-    public ProdutoModel buscar(Long id){
-        return repository.findById(id).orElse(null);
+    public ProdutoModel buscarPorId(int id){
+        return repository.getById(id).getId();
     }
 
     public ProdutoModel atualizar(Long id, ProdutoModel produto){
@@ -31,11 +31,8 @@ public class ProdutoService {
     }
 
     public boolean deletar(Long id){
-        ProdutoModel produto = buscar(id);
-        if(produto == null){
-            return false;
-        }
         repository.deleteById(id);
-        return true;
+        return false;
     }
+
 }
