@@ -21,8 +21,8 @@ public class ProdutoService {
         return repository.findAll();
     }
 
-    public ProdutoModel buscarPorId(int id){
-        return repository.getById(id).getId();
+    public ProdutoModel buscarPorId(Long id){
+        return repository.findById(id).get();
     }
 
     public ProdutoModel atualizar(Long id, ProdutoModel produto){
@@ -32,7 +32,7 @@ public class ProdutoService {
 
     public boolean deletar(Long id){
         repository.deleteById(id);
-        return false;
+        return true;
     }
 
 }
